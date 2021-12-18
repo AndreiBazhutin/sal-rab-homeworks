@@ -14,11 +14,11 @@ function calcShipping(sum, min, shipping) {
     // если productsSum больше 0 и меньше freeShippingMinSum,
     // то shippingSum присвоить значение shippingPrice
 
-    if (productsSum===0 || productsSum>=freeShippingMinSum) {
+    if (productsSum==0 || productsSum>=freeShippingMinSum) {
         shippingSum=0;
         }
         else {
-            productsSum = productsSum;
+            productsSum = shippingPrice;
         }
     }
     
@@ -40,7 +40,7 @@ function calcDiscount(sum, min, discount) {
     // то присвойте discountSum значение discountPart процентов от productsSum,
     // иначе присвойте discountSum значение 0
     if (productsSum>=discountMinSum) {
-        discountSum= ((discountPart/100) * productsSum)
+        discountSum= (productsSum / 100 * discountPart);
     } else {
         discountSum=0;
     }
